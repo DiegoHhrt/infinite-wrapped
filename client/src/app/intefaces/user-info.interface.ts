@@ -11,12 +11,14 @@ export interface UserInfo {
     };
     href: string;
     id: string;
-    images: {
-        height?: number;
-        url: string;
-        width?: number;
-    }[];
+    images: Img[];
     product: string;
     type: string;
     uri: string;
+}
+
+interface Img {
+    height?: number;
+    url: string;
+    width?: number;
 }

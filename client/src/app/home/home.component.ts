@@ -4,32 +4,14 @@ import { UserInfo } from '../intefaces/user-info.interface';
 import { CommonModule } from '@angular/common';
 import { AuthService } from '../auth/auth.service';
 import { HttpHeaders } from '@angular/common/http';
+import { UserBadgeComponent } from '../user-badge/user-badge.component';
+import { SharedModule } from '../shared/shared.module';
 
 @Component({
     selector: 'app-home',
     standalone: true,
-    imports: [CommonModule],
+    imports: [SharedModule, UserBadgeComponent],
     templateUrl: './home.component.html',
     styleUrl: './home.component.scss',
 })
-export class HomeComponent implements OnInit {
-    private spotify: UserInfoService = inject(UserInfoService);
-    private authService = inject(AuthService);
-
-    private token?: string;
-
-    public userInfo?: UserInfo;
-    ngOnInit(): void {
-        this.token = this.authService.getToken();
-    }
-
-    queryData = () => {
-        this.spotify
-            .getProfileInfo()
-            .subscribe((data) => (this.userInfo = data));
-    };
-
-    login = () => {
-        this.authService.authLogin();
-    };
-}
+export class HomeComponent {}

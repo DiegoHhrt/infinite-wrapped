@@ -1,0 +1,69 @@
+<div class="user">
+    <mat-card class="user-card" *ngIf="userInfo; else noLogin">
+        <mat-card-header class="user-card-header">
+            <div class="user-card-header-profile-pic">
+                <img mat-card-avatar [src]="profilePicUrl" alt="profile" />
+            </div>
+            <div class="user-card-header-name">
+                <mat-card-title>
+                    {{ userInfo?.display_name }}
+                </mat-card-title>
+                <mat-card-subtitle>
+                    {{ userInfo?.email }}
+                </mat-card-subtitle>
+            </div>
+            <div class="user-card-header-button">
+                <button
+                    mat-mini-fab
+                    color="accent"
+                    aria-label="login button"
+                    (click)="login()"
+                >
+                    <mat-icon>login</mat-icon>
+                </button>
+            </div>
+        </mat-card-header>
+        <mat-card-content class="user-card-content">
+            <div class="user-card-content-top-artist">
+                <h5>Your top artist at the moment:</h5>
+                <div class="user-card-content-top-artist-summary">
+                    <img
+                        class="user-card-content-top-artist-pic"
+                        [src]="topArtistPicUrl"
+                        alt="Artist"
+                    />
+                    <span class="user-card-content-top-artist-name">{{
+                        recentTopArtist?.name
+                    }}</span>
+                </div>
+            </div>
+            <div class="user-card-content-top-track">
+                <span>Your top track at the moment:</span>
+                <div class="user-card-content-top-track-summary">
+                    <img
+                        class="user-card-content-top-track-pic"
+                        [src]="topTrackPicUrl"
+                        alt="track"
+                    />
+                    <span class="user-card-content-top-track-name">{{
+                        recentTopTrack?.name
+                    }}</span>
+                </div>
+            </div>
+        </mat-card-content>
+    </mat-card>
+
+    <ng-template #noLogin>
+        <div class="no-login">
+            <span>Please login</span>
+            <button
+                mat-mini-fab
+                color="accent"
+                aria-label="login button"
+                (click)="login()"
+            >
+                <mat-icon>login</mat-icon>
+            </button>
+        </div>
+    </ng-template>
+</div>

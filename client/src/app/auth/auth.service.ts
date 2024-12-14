@@ -7,7 +7,7 @@ import { Router } from '@angular/router';
     providedIn: 'root',
 })
 export class AuthService {
-    private readonly scope = 'user-read-private user-read-email';
+    private readonly scope = 'user-read-private user-read-email user-top-read';
     private codeVerifier?: string;
     // private readonly hashed?: ArrayBuffer;
     // private readonly codeChallenge: string;

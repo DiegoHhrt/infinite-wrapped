@@ -1,0 +1,67 @@
+.user {
+    width: 100%;
+    &-card {
+        width: 100%;
+        margin-bottom: 20px;
+        &-header{
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            &-profile-pic{
+                width: max-content;
+                margin-right: 30px;
+            }
+            &-name{
+                flex-grow: 2;
+            }
+            &-button{
+                flex-grow: 1;
+                display: flex;
+                justify-content: end;
+            }
+        }
+        &-content {
+            width: 100%;
+            &-top-artist{
+                &-summary{
+
+                }
+                &-pic {
+                    border-radius: 15px;
+                    width: 80px;
+                    height: 80px;
+                    margin-right: 20px;
+                }
+                &-name {
+                    font-size: 20px;
+                    font-weight: bold;
+                }
+            }
+            &-top-track{
+                &-summary{
+
+                }
+                &-pic {
+                    border-radius: 8px;
+                    width: 50px;
+                    height: 50px;
+                    margin-right: 20px;
+                }
+                &-name {
+                    font-size: 16px;
+
+                }
+            }
+        }
+    }
+}
+
+.no-login {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    color: #000;
+}

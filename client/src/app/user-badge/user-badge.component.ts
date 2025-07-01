@@ -36,11 +36,11 @@ export class UserBadgeComponent {
         });
         this.spotify.getUserTopArtists('medium_term', 1).subscribe((data) => {
             this.recentTopArtist = data.items[0];
-            this.topArtistPicUrl = this.recentTopArtist.images[0].url;
+            this.topArtistPicUrl = this.recentTopArtist.images[2].url;
         });
         this.spotify.getUserTopTracks('short_term', 1).subscribe((data) => {
             this.recentTopTrack = data.items[0];
-            this.topTrackPicUrl = this.recentTopTrack.album.images[0].url;
+            this.topTrackPicUrl = this.recentTopTrack.album.images[2].url;
         });
     };
 
